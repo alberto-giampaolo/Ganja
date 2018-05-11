@@ -50,7 +50,7 @@ def minimizing_epoch_sum(var_list,epoch_list,bins):   # Epoch that minimizes the
     for ep in range(len(epoch_list)):
         ks_var_sum = sum([ks_percentile_sum(v,epoch_list,ep,bins) for v in var_list])
         if (min_sum==None or ks_var_sum < min_sum): min_ep, min_sum = ep, ks_var_sum
-    return min_ep
+    return min_ep, min_sum
 
 def plot_ks_sum(var_list,ep_list,bins):
     ks_sum = []
